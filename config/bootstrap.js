@@ -17,9 +17,9 @@ module.exports.bootstrap = function(cb) {
 	console.info("Registering FacebookStrategy with passport ...");
 	
 	passport.use(new FacebookStrategy({
-	    clientID: '179057812298343',
-	    clientSecret: 'a4572f97e4595bcd66998015005be02a',
-	    callbackURL: "http://localhost:1337/auth/facebook/callback"
+	    clientID: sails.config.facebook.FACEBOOK_CLIENT_ID,
+	    clientSecret: sails.config.facebook.FACEBOOK_CLIENT_SECRET,
+	    callbackURL: sails.config.facebook.FACEBOOK_AUTH_CALLBACK_URL
 	  },
 	  function(accessToken, refreshToken, profile, done) {
 		  
