@@ -60,6 +60,11 @@ module.exports.http = {
          return next();
      },
 
+     /****************************************************************************
+      *                                                                           *
+      * Session filtering - Users are redirected to login screen if not logged in already.              *
+      *                                                                           *
+      ****************************************************************************/
      sessionFilter: function (req, res, next) {
          console.log("Inside sessionFilter, url = " + req.url);
     	 
